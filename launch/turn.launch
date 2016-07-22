@@ -1,0 +1,14 @@
+<launch>
+
+    <include file="$(find racecar)/launch/teleop.launch"/>
+
+    <include file="$(find zed_wrapper)/launch/zed.launch"/>
+
+    <node pkg="object_detection" type="echo.py" name="blob_detection_publisher" />
+
+    <node pkg="object_detection" type="drive_controller_node.py" name="drive_node_1" />
+
+    <node pkg="object_detection" type="wall_detector.py" name="drive_node_2" />
+
+</launch>   
+    
